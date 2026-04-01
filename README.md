@@ -1,1 +1,126 @@
-# Gf_gift
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do you love me?</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: whitesmoke;
+font-family: "Comic Relief", system-ui;
+}
+
+#wrapper{
+text-align:center;
+}
+
+#gif {
+height: 250px;
+width: 250px;
+cursor: zoom-in;
+}
+
+#gif:active {
+transform: scale3d(1.3,1.3,1.3);
+}
+
+h2 {
+text-align: center;
+font-size: 1.5em;
+color: #e94d58;
+margin: 15px 0;
+}
+
+#btn-group {
+width: 100%;
+height: 50px;
+display: flex;
+justify-content: center;
+margin-top: 50px;
+position: relative;
+}
+
+button {
+position: absolute;
+width: 150px;
+height: 50px;
+color: white;
+font-size: 1.2em;
+border-radius: 30px;
+outline: none;
+cursor: pointer;
+box-shadow: 0 2px 4px gray;
+border: 2px solid #e94d58;
+}
+
+#yes-btn {
+margin-left: -200px;
+background: #e94d58;
+}
+
+#no-btn {
+margin-right: -200px;
+background: white;
+color: #e94d58;
+cursor: not-allowed;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+<h2 id="question"> توحشتيني ولا لالا؟🙂❤️ </h2>
+
+<img
+id="gif"
+src="https://media.giphy.com/media/FTGah7Mx3ss04PcasF/giphy.gif"
+/>
+
+<div id="btn-group">
+<button id="yes-btn">Yes</button>
+<button id="no-btn">No</button>
+</div>
+</div>
+
+<script>
+const question = document.getElementById("question");
+const gif = document.getElementById("gif");
+const yesBtn = document.getElementById("yes-btn");
+const noBtn = document.getElementById("no-btn");
+
+yesBtn.addEventListener("click", () => {
+question.innerHTML = "مام انا توحشتك وحشمت  😍";
+gif.src = "https://media.giphy.com/media/UMon0fuimoAN9ueUNP/giphy.gif";
+});
+
+noBtn.addEventListener("mouseover", () => {
+const noBtnRect = noBtn.getBoundingClientRect();
+
+const maxX = window.innerWidth - noBtnRect.width;
+const maxY = window.innerHeight - noBtnRect.height;
+
+const randomX = Math.floor(Math.random() * maxX);
+const randomY = Math.floor(Math.random() * maxY);
+
+noBtn.style.left = randomX + "px";
+noBtn.style.top = randomY + "px";
+});
+</script>
+
+</body>
+</html>
